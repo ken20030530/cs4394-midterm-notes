@@ -1,5 +1,7 @@
 # W05 ORCON、Trusted Computing Base、密碼學基礎 詳細解說
 
+[← 回到目錄](./)
+
 > 來源：`W05 Week_5_Slides.pdf`、Exercises 4（答案，10/29 新版）、study guide。
 > **【小測】** = study guide 點名要識；「（補充）」= 我加的解釋。
 
@@ -204,3 +206,7 @@ Exercises 4 Q10：要金鑰的是**加密、MAC、digital signature**；**hash �
 3. 對稱 50 × 49 / 2 = **1,225**；非對稱 2 × 50 = **100**。
 4. 只保護 **integrity**（下載的檔案沒有被改過）。如果攻擊者同時改了網站上的 hash 值，就檢查不出來；hash 不用金鑰，**不能證明來源**，要證明來源要用 digital signature。
 5. Complete（調解每次存取）、isolated（不能被修改）、verifiable（可以驗證正確）。
+
+---
+
+[← W04 Integrity 模型、RBAC](w04-integrity-models-rbac.md) ｜ [目錄](./) ｜ [W06 Public Key、Certificates →](w06-public-key-certificates.md)

@@ -1,5 +1,7 @@
 # W02 Metapolicy、Policy 和 Bell-LaPadula 詳細解說
 
+[← 回到目錄](./)
+
 > 來源：`W02 Week_2_Slides.pdf`、`W02 Week_2_answers_to_examples.pdf`、Tutorial 1 Q4–Q8、study guide。
 > **【小測】** = study guide 點名要識；「（補充）」= 我加的解釋。
 
@@ -145,3 +147,7 @@ Tutorial 1 Q5 的答案：
 2. Subject ≥ object（S ≥ S，{A,B} ⊇ {A}）→ 可讀；object ≥ subject？{A} 不包含 B → 不可寫 → **R**。
 3. *-property 允許向上寫，BLP 只保護機密不保護完整性。
 4. Policy（具體做法）。背後的 metapolicy 可能是「防止未授權的人接觸公司資料」。
+
+---
+
+[← W01 Introduction](w01-introduction.md) ｜ [目錄](./) ｜ [W03 Lattice、Covert Channels →](w03-lattice-covert-channels.md)

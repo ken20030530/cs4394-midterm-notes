@@ -1,5 +1,7 @@
 # W03 Lattice、Covert Channels、Non-Interference、Integrity 詳細解說
 
+[← 回到目錄](./)
+
 > 來源：`W03 Week_3_Slides.pdf`、study guide。**【小測】** = study guide 點名要識；「（補充）」= 我加的解釋。
 
 ## 1. Lattice：把 label 畫成圖【小測：要會畫】
@@ -168,3 +170,7 @@ Kemmerer 在 1980 年代初提出。根據系統的功能規格，畫一張表�
 2. **Timing**：接收方看的是時間。
 3. 沒有操作可以修改那個屬性，發送方無法用它傳訊息 → 不會是 covert channel。
 4. BLP 只管讀寫 object 的內容；NI 規定 S_H 的**任何行為**都不能影響 S_L 看到的東西，包括系統屬性和時間。
+
+---
+
+[← W02 Policy 和 BLP](w02-policy-blp.md) ｜ [目錄](./) ｜ [W04 Integrity 模型、RBAC →](w04-integrity-models-rbac.md)

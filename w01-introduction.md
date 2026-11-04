@@ -1,5 +1,7 @@
 # W01 Introduction 詳細解說
 
+[← 回到目錄](./)
+
 > 來源：`1 Lecture Slides/W01 Week_1_Slides.pdf`、`3 Tutorials/W03 Tutorial_1(_answers).pdf` Q1–Q3、`7 Study Guides/W10 study_guide_W1_to_W6.pdf`。
 > 標 **【小測】** 的是 study guide 點名要識的；標「（補充）」的是我加的解釋，slides 沒有寫。
 
@@ -118,3 +120,7 @@ Tutorial 1 Q3：買網絡保險 = **transfer**；裝防火牆 = **mitigation**�
 4. 醫院病人資料系統，CIA 哪個最重要？
 
 **答案**：1. Vulnerability（有人用它登入才是 attack）。2. SLE 50,000 × ARO 0.25 = **$12,500／年**。3. Avoidance。4. 沒有唯一答案，要講理由：急症要即時看病歷（A）；藥物或過敏紀錄錯了會致命（I）；病歷屬私隱（C）。
+
+---
+
+[目錄](./) ｜ [W02 Policy 和 BLP →](w02-policy-blp.md)

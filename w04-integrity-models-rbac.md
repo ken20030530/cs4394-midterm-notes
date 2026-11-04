@@ -1,5 +1,7 @@
 # W04 Integrity 模型（Biba、Lipner、Clark-Wilson）、Chinese Wall、RBAC 詳細解說
 
+[← 回到目錄](./)
+
 > 來源：`W04 Week_4_Slides.pdf`、Tutorial 2（答案）、Exercises 3（答案，10/29 新版）、study guide。
 > **【小測】** = study guide 點名要識；「（補充）」= 我加的解釋。
 
@@ -226,3 +228,7 @@ Exercises 3 Q5：要寫入某 CD，subject 必須 (1) 能讀那個 CD，而且 (
 3. 渣打和 HSBC 在同一 COI → **不可以**；Microsoft 在另一個 COI → **可以**。
 4. Separation of duty；Clark-Wilson 的 **C3**（分配 TP 要符合 separation of duty）和 **E4**（認證者不能執行）。
 5. 矩陣有 100 億格而且大部分是空的，太浪費；改用 ACL、capability 或即場計算的規則。
+
+---
+
+[← W03 Lattice、Covert Channels](w03-lattice-covert-channels.md) ｜ [目錄](./) ｜ [W05 ORCON、TCB、密碼學基礎 →](w05-orcon-tcb-crypto.md)

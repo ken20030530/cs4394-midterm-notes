@@ -1,11 +1,13 @@
 # W06 Public Key 加密、Google Cloud 加密、Certificate 和 Chain of Trust 詳細解說
 
+[← 回到目錄](./)
+
 > 來源：`W06 Week_6_Slides.pdf`、Exercises 5（答案，第 8 週做但考 W06 內容）、study guide。
 > **【小測】** = study guide 點名要識；「（補充）」= 我加的解釋。
 
 ## 1. Public key（非對稱）加密【小測：RSA 靠甚麼、解決甚麼問題】
 - 歷史：1976 年 **Diffie 和 Hellman** 公開提出加密和解密用不同金鑰。1997 年才披露英國 GCHQ 在 1970 年代初已發明，叫「non-secret encryption」。
-- 用公開的 public key 加密，用秘密的 private key 解密：M = {{M}K}K⁻¹。
+- 用公開的 public key 加密，用秘密的 private key 解密：M = { {M}K }K⁻¹。
 - 基礎是一個 **one-way function（單向函數）**：**容易計算，但沒有額外資料就很難倒推**。
 
 ### RSA【小測】
@@ -185,3 +187,7 @@ X.509 是廣泛使用的 digital certificate 國際標準。X.509v3 的欄位：
 3. 資料由 DEK 加密；換 KEK 只要用新 KEK 重新包裝 DEK，DEK 本身沒有變，資料不用重新加密。
 4. 停用外洩的 KEK、產生新 KEK、用新 KEK 重新包裝所有 DEK。DEK 沒有外洩，就不用換 DEK，也不用重新加密資料。
 5. 攻擊者也可以自稱是你並給出他的 public key（中間人攻擊）。要由受信任的第三方 CA 擔保身份和 public key 的綁定，別人用 CA 的 public key 驗證後才可以相信。
+
+---
+
+[← W05 ORCON、TCB、密碼學基礎](w05-orcon-tcb-crypto.md) ｜ [目錄](./)
