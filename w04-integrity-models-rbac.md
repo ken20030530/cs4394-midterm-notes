@@ -29,6 +29,30 @@
 
 每格問：object ≥ subject？→ R；subject ≥ object？→ W。例如 Subj3 對 Obj3：{B,C} 不包含 A，{A,B} 也不包含 C → 互不 dominate → N/A。
 
+### 類別是 `{}` 時的 Biba Strict 讀寫（no read down、no write up，即只可以 read up、write down）
+規則和 W02 一樣：**任何集合都包含 `{}`**，所以和 `{}` 比較時，對方是 `{}` 就只比等級；自己是 `{}` 而對方有類別，就一定不 dominate。方向和 BLP 相反：
+
+- **Subject 的類別是 `{}`**：
+  - **讀**（要「它 ≥ 我」）：可以讀任何等級**不比他低**的 object，**不論類別**。例如 Subj2 (L, {}) 對 Obj1 (L, {A,B,C})、Obj3 (L, {B,C}) 都是 **R**。
+  - **寫**（要「我 ≥ 它」）：只能寫類別**也是 `{}`**、而且等級**不比他高**的 object。例如 Subj2 只可以寫 Obj2 (L, {})，所以對 Obj2 是 **RW**。
+- **Object 的類別是 `{}`**：
+  - **讀**：只有類別也是 `{}`、而且等級不比它高的 subject 可以讀。例如 Subj1 (H, {A,B,C}) 不可以讀 Obj2 (L, {})，因為是 read down；Subj3 (L, {A,B}) 也不可以讀，因為 {} 不包含 A、B。
+  - **寫**：任何等級不比它低的 subject 都可以寫，不論類別。例如 Subj1 和 Subj3 對 Obj2 都是 **W**。
+- **Lattice**：(L, {}) 是 integrity 最低的 label。Biba 的資訊只可以由高 integrity 向下流，所以任何資訊都可以流進 (L, {})，但 (L, {}) 的資訊不可以流到任何較高的 label。
+
+**BLP 和 Biba Strict 遇到 `{}` 的對照**（同一張表，方向剛好相反）：
+
+| 情況 | BLP（機密） | Biba Strict（完整） |
+|---|---|---|
+| Subject 是 `{}`，讀 | 只可以讀 `{}` 而且等級 ≤ 自己的 object | 可以讀任何等級 ≥ 自己的 object |
+| Subject 是 `{}`，寫 | 可以寫任何等級 ≥ 自己的 object | 只可以寫 `{}` 而且等級 ≤ 自己的 object |
+| Object 是 `{}`，誰可以讀 | 任何等級 ≥ 它的 subject | 只有 `{}` 而且等級 ≤ 它的 subject |
+| Object 是 `{}`，誰可以寫 | 只有 `{}` 而且等級 ≤ 它的 subject | 任何等級 ≥ 它的 subject |
+
+（補充）另外兩個 Biba 政策遇到 `{}`：
+- **Ring**：讀沒有限制；寫的規則和 Strict 一樣（上表右邊的「寫」）。
+- **LWM**：寫的規則和 Strict 一樣；讀了之後，subject 的 label 降到兩者較低的一個。Slides 只寫了等級的 min；如果連類別一起算，一般做法是等級取較低、類別取**交集**。所以讀了類別是 `{}` 的 object，subject 的類別就會變成 `{}`。這部分 slides 沒有講，考試以 slides 為準。
+
 ### BLP + Biba 一起用【小測】
 同時要機密和完整 → 每個 subject 和 object 要有**兩套 label**；一個存取要 **BLP 和 Biba 都允許**才可以。
 （補充）做題步驟：先用 confidentiality label 按 BLP 判斷 R／W，再用 integrity label 按 Biba 判斷 R／W，**兩邊都有的才保留**。Study guide 寫「見 Exercises 5 Q6」，但新版 Exercises 5 是加密題，這類題目在 Tutorial 2 Q5（Lipner）。
